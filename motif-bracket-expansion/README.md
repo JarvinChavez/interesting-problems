@@ -13,9 +13,11 @@ Early recursive expansion worked for simple cases but I didn't handle:
 - `X` wildcards (should expand to `[ACDEFGHIKLMNPQRSTVWY]`)
 - Regex special characters in expanded motifs when searching
 
-## How I'd solve it
+## Step-by-step solution notes
 
-1. Normalize `X` → full amino-acid bracket set
-2. Recursively expand **leftmost** bracket group (see `solution.js`)
-3. When searching, **escape regex metacharacters** in literal motifs
-4. Full production version lives in [icn3d server `motifCheck`](https://github.com/JarvinChavez/icn3d-implementation-proof-of-concept/blob/main/iCn3D/server.js)
+1. **Normalize wildcards:** convert `X` to a full amino-acid option set.
+2. **Find first bracket group:** parse leftmost `[ ... ]` token and split options.
+3. **Expand recursively:** for each option, recurse on suffix and prepend prefix + option.
+4. **Escape before search:** treat expanded motifs as literals by escaping regex metacharacters.
+5. **Collect matches:** scan sequence and store start-end spans for each motif variant.
+6. **Cross-check behavior:** compare outputs against the production `motifCheck` implementation in iCn3D server code.

@@ -1,4 +1,12 @@
-/** Expand bracketed motif patterns into concrete amino-acid strings. */
+/**
+ * Expand bracketed motif patterns into concrete amino-acid strings.
+ *
+ * Step-by-step:
+ * 1) Normalize wildcard X into a full amino-acid option set.
+ * 2) Recursively expand one bracket group at a time.
+ * 3) Escape variants before regex search.
+ * 4) Record all match spans for each expanded motif.
+ */
 
 const AMINO_ACIDS = "ACDEFGHIKLMNPQRSTVWY";
 

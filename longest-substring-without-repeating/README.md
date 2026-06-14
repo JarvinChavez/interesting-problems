@@ -10,11 +10,12 @@ Example: `"abcabcbb"` → `3` (`"abc"`)
 
 I started a sliding-window loop but only printed prefixes (`s[:i]`) — never tracked a window, duplicates, or max length.
 
-## How I'd solve it
+## Step-by-step solution notes
 
-Classic **sliding window + hash set**:
-- Expand `right` pointer, add chars to a set
-- When duplicate found, shrink from `left` until duplicate removed
-- Track `max_len` across the walk — **O(n)** time, **O(min(n, alphabet))** space
+1. **Initialize window state:** `left = 0`, empty `seen` set, `best = 0`.
+2. **Expand right pointer:** iterate characters from left to right.
+3. **Handle duplicates:** while current char is already in `seen`, remove `s[left]` and increment `left`.
+4. **Record current window:** add current char, compute window length `right - left + 1`, and update `best`.
+5. **Return answer:** final `best` is the longest substring length.
 
 See `solution.py`.

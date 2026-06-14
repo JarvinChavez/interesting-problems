@@ -1,11 +1,11 @@
 # Interesting Problems
 
-Unfinished code, bugs I hit, and how I'd solve them — kept as learning artifacts.
+Archive of problems I solved (or debugged from a broken attempt), with notes on what failed and how I fixed it.
 
 Each folder has:
-- **`README.md`** — problem statement and notes
+- **`README.md`** — problem statement, failure notes, and step-by-step solution notes
 - **`attempt.*`** — where I stopped or what broke
-- **`solution.*`** — working approach or reference implementation
+- **`solution.*`** — my working implementation
 
 ---
 
@@ -18,6 +18,11 @@ Each folder has:
 | [motif-bracket-expansion](motif-bracket-expansion/) | Expand bracketed amino-acid motif patterns for sequence search |
 
 ---
+
+## Authorship note
+
+- All code in this repository is written by **Jarvin Chavez**.
+- Cursor assistance is limited to reviewing logic, checking edge cases, and helping authenticate that the final solution matches the intended approach.
 
 ## Author
 

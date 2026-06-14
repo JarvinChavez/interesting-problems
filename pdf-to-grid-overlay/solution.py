@@ -1,8 +1,13 @@
-"""Fixed approach — rasterize PDF pages with PyMuPDF, then apply grid overlay."""
+"""Fixed approach — rasterize PDF pages with PyMuPDF, then apply grid overlay.
+
+Step-by-step:
+1) Convert each PDF page to PNG.
+2) Draw small and large grid lines on each PNG.
+3) Write a matching *_grid.png output for coordinate inspection.
+"""
 
 from __future__ import annotations
 
-import os
 from pathlib import Path
 
 import cv2
